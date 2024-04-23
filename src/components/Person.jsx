@@ -14,8 +14,13 @@ const Person = (props) => {
   const handleDeletePerson = (person) => {
     if(window.confirm('Delete ' + person.name +'?')) {
       personsServices.deletePerson(person.id).then(response => {
-        props.setPersons(props.persons.filter(person => response.data.id !== person.id))
-        props.setPersonsFiltered(props.personsFiltered.filter(person => response.data.id !== person.id))
+        //props.setPersons(props.persons.filter(person => response.data.id !== person.id))
+        //props.setPersonsFiltered(props.personsFiltered.filter(person => response.data.id !== person.id))
+        const updatedPersons = props.persons.filter(p => p.id !== person.id);
+        const updatedFilteredPersons = props.personsFiltered.filter(p => p.id !== person.id);
+
+        props.setPersons(updatedPersons);
+        props.setPersonsFiltered(updatedFilteredPersons);
         }).catch(error => {
           props.setMessage({text: `Information of ${person.name} has already been removed from server`, isError: true})
           setTimeout(() => {
