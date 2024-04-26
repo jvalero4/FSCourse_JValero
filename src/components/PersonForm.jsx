@@ -41,6 +41,8 @@ const PersonForm = ({persons, setPersons, setPersonsFiltered, personsFiltered, s
         personsServices.createPerson(personObject).then(response => {
           setPersons(persons.concat(response.data))
           setPersonsFiltered(personsFiltered.concat(response.data))
+        }).catch(error => {
+          console.log(error.response.data.error);
         })
         setNewName('')
         setNewNumber('')
