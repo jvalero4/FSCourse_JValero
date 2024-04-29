@@ -30,6 +30,7 @@ const PersonForm = ({persons, setPersons, setPersonsFiltered, personsFiltered, s
           }).catch(error => {
             setMessage({text: `Information of ${newName} has already been removed from server`, isError: true})
           })
+
           setMessage({text: `The number of '${newName}' was modified`, isError: false})
           setTimeout(() => {
             setMessage({text: null, isError: false})
@@ -41,13 +42,13 @@ const PersonForm = ({persons, setPersons, setPersonsFiltered, personsFiltered, s
         personsServices.createPerson(personObject).then(response => {
           setPersons(persons.concat(response.data))
           setPersonsFiltered(personsFiltered.concat(response.data))
+          setNewName('')
+          setNewNumber('')
+          setMessage({text: `Added '${newName}'`, isError: false})
         }).catch(error => {
-          console.log(error.response.data.error);
+          setMessage({text: error.response.data.error, isError: true})
         })
-        setNewName('')
-        setNewNumber('')
-
-        setMessage({text: `Added '${newName}'`, isError: false})
+        
         setTimeout(() => {
           setMessage({text: null, isError: false})
         }, 5000);
