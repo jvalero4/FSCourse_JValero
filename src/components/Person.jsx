@@ -1,5 +1,5 @@
 
-import personsServices from './../services/persons'
+import personsServices from '../services/persons.mjs'
 
 const Person = (props) => {
 

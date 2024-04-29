@@ -2,7 +2,7 @@ import { useState,useEffect } from 'react'
 import Filter from './components/Filter'
 import PersonForm from './components/PersonForm'
 import Person from './components/Person'
-import personsServices from './services/persons'
+import personsServices from './services/persons.mjs'
 import Notification from './components/Notification'
 import './index.css'
 
