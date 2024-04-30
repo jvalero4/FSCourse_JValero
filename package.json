@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "json": "^11.0.0",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.3",
+    "nodemon": "^3.1.0"
+  },
+  "name": "part4a_bloglist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvalero4/FSCourse_JValero.git"
+  },
+  "author": "Javier Valero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvalero4/FSCourse_JValero/issues"
+  },
+  "homepage": "https://github.com/jvalero4/FSCourse_JValero#readme",
+  "description": ""
+}
