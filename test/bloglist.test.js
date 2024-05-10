@@ -66,11 +66,15 @@ const listWithOneBlog = [
       }  
     ]
 
-test('dummy returns one', () => {
 
-  const result = listHelper.dummy(listWithoutBlogs)
-  assert.strictEqual(result, 1)
+describe('dummy', () => {
+  test('dummy returns one', () => {
+
+    const result = listHelper.dummy(listWithoutBlogs)
+    assert.strictEqual(result, 1)
+  })
 })
+
 
 describe('total likes', () => {
   

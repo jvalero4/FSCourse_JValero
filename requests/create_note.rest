@@ -1,9 +1,0 @@
-POST http://localhost:3003/api/blogs
-Content-Type: application/json
-
-{
-  "title": "Blog 1UP Elpais",
-  "author": "Javier Valero",
-  "url": "https://elpais.com/cultura/1up/",
-  "likes": 10
-}

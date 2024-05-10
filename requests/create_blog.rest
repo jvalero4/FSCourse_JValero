@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Blog Elemental Elpais",
+  "author": "Javier Valero",
+  "url": "https://elpais.com/cultura/elemental/",
+  "likes": 6,
+  "user": "663c971e7147b4c25ec7ec3a"
+}
