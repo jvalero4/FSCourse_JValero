@@ -5,8 +5,11 @@ const supertest = require('supertest')
 const testHelper = require('./test_helper')
 const app = require('../app')
 const Blog = require('../models/blog')
+const User = require('../models/user')
 
 const api = supertest(app)
+
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imp2YWxlcm8iLCJpZCI6IjY2NDFmMGU1NGEwZjRjMDdlZGY4YTZlZSIsImlhdCI6MTcxNTY3NTI5MX0.84QAxWadm2Kt9nc1ugXR7rot0McmQiDlXJLTmh0B_NE'
 
 beforeEach(async () => {
     await Blog.deleteMany({})
@@ -41,8 +44,9 @@ describe('HTTP requests', () => {
             url: "https://elpais.com/cultura/elemental/",
             likes: 6
         }
-    
+ 
         await api.post('/api/blogs')
+        .set('Authorization', `Bearer ${token}`)
         .send(newBlog)
         .expect(201)
         .expect('Content-Type', /application\/json/)
@@ -62,6 +66,7 @@ describe('HTTP requests', () => {
         }
 
         await api.post('/api/blogs')
+        .set('Authorization', `Bearer ${token}`)
         .send(newBlog)
         .expect(201)
         .expect('Content-Type', /application\/json/)
@@ -79,6 +84,7 @@ describe('HTTP requests', () => {
         }
 
         await api.post('/api/blogs')
+        .set('Authorization', `Bearer ${token}`)
         .send(newBlog)
         .expect(400)
 
@@ -89,9 +95,8 @@ describe('HTTP requests', () => {
     test("if id it's valid, success with status code 204 work", async() => {
         const blogsAtStart = await testHelper.blogsInDb()
         const blogToDelete = blogsAtStart[0]
-
-        await api
-        .delete(`/api/blogs/${blogToDelete.id}`)
+        await api.delete(`/api/blogs/${blogToDelete.id}`)
+        .set('Authorization', `Bearer ${token}`)
         .expect(204)
 
         const blogsAtEnd = await testHelper.blogsInDb()

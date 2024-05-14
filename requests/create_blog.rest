@@ -1,10 +1,10 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imp2YWxlcm8iLCJpZCI6IjY2M2I1ZGM2NjRkNDNlNTZkNmMzZjVmMCIsImlhdCI6MTcxNTU4Mzc2OH0.84ceqr2vYxp4gxLeCOmeIvI3RoQsaLL7wSFy7pa6NW4
 
 {
-  "title": "Blog Elemental Elpais",
+  "title": "Billete a Macondo",
   "author": "Javier Valero",
-  "url": "https://elpais.com/cultura/elemental/",
-  "likes": 6,
-  "user": "663c971e7147b4c25ec7ec3a"
+  "url": "https://elpais.com/internacional/billete_a_macondo/",
+  "likes": 8
 }

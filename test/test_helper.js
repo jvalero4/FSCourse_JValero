@@ -5,13 +5,15 @@ initialBlogs = [{
     "title": "Blog adrenalina Elpais",
     "author": "Javier Valero",
     "url": "https://elpais.com/deportes/adrenalina/",
-    "likes": 4
+    "likes": 4,
+    "user": "6641f0e54a0f4c07edf8a6ee"
   },
   {
     "title": "Blog 1UP Elpais",
     "author": "Javier Valero",
     "url": "https://elpais.com/cultura/1up/",
-    "likes": 10
+    "likes": 10,
+    "user": "6641f0e54a0f4c07edf8a6ee"
   }]
 
   const blogsInDb = async () => {
